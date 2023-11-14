@@ -1,0 +1,15 @@
+{% extends 'Poudlard/base.html' %}
+{% load static%}
+ 
+{% block content %}
+    {% for character in characters %}
+        <div class="character">
+            <div class="date">
+                {{ character.id_character}}
+            </div>
+            <h2><a href="{% url 'character_detail' pk=character.pk %}">{{ character.id_character }}</a></h2>
+            <img src = "{%get_static_prefix%} {{character.photo}}" alt = "Harry Potter">
+            <p>{{ character.photo|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
