@@ -1,0 +1,31 @@
+{% extends 'Poudlard/base.html' %}
+{% load static%}
+
+{% block content %}
+    <div>
+        <h1 class="text-center">
+            {{ character.id_character }}
+        </h1>
+        <img class="imageCharacter" src="{% static 'media/' %}{{ character.photo }}" alt="{{ character.id_character }}">
+    </div>
+    <div>
+        <h1 class="text-center">
+            {{ lieu.id_equip }}
+        </h1>
+        <img class="imageCharacter" src="{% static 'media/' %}{{ lieu.photo }}" alt="{{ lieu.id_equip }}">
+    </div>
+        
+    <div>
+        <h2 class="text-center">
+            {{ character.etat }}
+        </h2>
+    </div>
+
+    <div class="text-center">
+        <form method="POST" class="post-form">{% csrf_token %}
+            <b> Changer : </b> {{ form.as_ul }}
+            <button type="submit" class="btn btn-outline-light">OK</button>
+        </form>
+    </div>
+    
+{% endblock %}

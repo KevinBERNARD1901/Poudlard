@@ -11,7 +11,7 @@ class Equipement(models.Model):
 class Character(models.Model):
     id_character = models.CharField(max_length=100, primary_key=True)
     etat = models.CharField(max_length=20)
-    type = models.CharField(max_length=20)
+    type = models.CharField(max_length=30)
     race = models.CharField(max_length=20)
     photo = models.CharField(max_length=200)
     lieu = models.ForeignKey(Equipement, on_delete=models.CASCADE)

@@ -1,8 +1,13 @@
+@font-face {
+    font-family: 'Lumos';
+    src: url('Lumos.ttf') format('truetype');
+}
+
 .page-header {
-    background-color: #C25100;
+    background-color: #2a006e;
     margin-top: 0;
     margin-bottom: 40px;
-    padding: 20px 20px 20px 40px;
+    padding: 10px 0;
 }
  
 .page-header h1,
@@ -10,15 +15,17 @@
 .page-header h1 a:visited,
 .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 128pt;
     text-decoration: none;
+    text-align: center;
+    font-family: 'Lumos', sans-serif;
 }
  
 h1,
 h2,
 h3,
 h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Lumos', sans-serif;
 }
  
 .date {
@@ -44,7 +51,7 @@ h4 {
 }
  
 .post {
-    margin-bottom: 70px;
+    margin-bottom: 20px;
 }
  
 .post h2 a,
@@ -67,4 +74,17 @@ h4 {
 .btn-default:hover {
     color: #FFFFFF;
     background-color: #C25100;
+}
+
+.imageCharacter{
+    height : 400px;
+}
+
+.character{
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.imageBackground{
+    height : 600px;
 }
