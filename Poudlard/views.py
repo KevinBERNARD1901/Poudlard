@@ -62,6 +62,6 @@ def character_detail(request,pk):
 
             return redirect('character_detail', pk=character.pk)
         
-    #messages_warning = messages.get_messages(request)
+    #messages = messages.get_messages(request)
     
     return render(request, 'Poudlard/character_detail.html', {'character': character, 'lieu': lieu, 'form': form,})#'messages_warning': messages_warning})
