@@ -23,20 +23,25 @@ def character_detail(request,pk):
         if form.is_valid():
             nouveau_lieu = form.cleaned_data['lieu']
             nouveau_lieu = get_object_or_404(Equipement, id_equip=nouveau_lieu)
+            occupants_nouveau_lieu = Character.objects.filter(lieu = nouveau_lieu)
+
             
             if character.etat == 'affame' and nouveau_lieu.id_equip != 'Grande Salle':
                 #message "Le personnage a faim."
-                messages.error(request, "Le personnage a faim.", extra_tags='danger')
+                messages.error(request, f"{character.id_character} a faim.", extra_tags='danger')
                 return redirect('character_detail', pk=pk)
             
             elif character.etat == 'fatigue' and nouveau_lieu.id_equip != 'Dortoir':
                 #message "Le personnage a sommeil."
-                messages.error(request, "Le personnage a sommeil.", extra_tags='danger')
+                messages.error(request, f"{character.id_character} a sommeil.", extra_tags='danger')
                 return redirect('character_detail', pk=pk)
 
             elif nouveau_lieu.disponibilite == 'occupe':
                 #message "Le lieu d'arrivée est occupé. Choisissez un autre lieu."
-                messages.error(request, "Le lieu d'arrivée est occupé. Choississez un autre lieu.", extra_tags='danger')
+                liste_occupants = []
+                for occupant in occupants_nouveau_lieu:
+                    liste_occupants.append(occupant.id_character)
+                messages.error(request, f"Le lieu d'arrivée est occupé par {liste_occupants}. Choississez un autre lieu.", extra_tags='danger')
                 return redirect('character_detail', pk=pk) 
 
             # Mise à jour du lieu d'origine
