@@ -28,5 +28,12 @@
             <button type="submit" class="btn btn-outline-light">OK</button>
         </form>
     </div>
+    {% if messages_warning %}
+    <div class="alert alert-danger" role="alert">
+        {% for message in messages_warning %}
+            {{ message }}
+        {% endfor %}
+    </div>
+    {% endif %}
     
 {% endblock %}

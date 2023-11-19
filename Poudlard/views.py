@@ -25,14 +25,17 @@ def character_detail(request,pk):
             nouveau_lieu = get_object_or_404(Equipement, id_equip=nouveau_lieu)
 
             if nouveau_lieu.disponibilite == 'occupe':
-                #messages.error(request, "Le lieu d'arrivée est occupé. Choisissez un autre lieu.")
+                #message "Le lieu d'arrivée est occupé. Choisissez un autre lieu."
+                messages.error(request, "Le lieu d'arrivée est occupé. Choississez un autre lieu.")
                 return redirect('character_detail', pk=pk)
             
             if character.etat == 'affame' and nouveau_lieu.id_equip != 'Grande Salle':
-                #messages.error(request, "Le personnage a faim.")
+                #message "Le personnage a faim."
+                messages.error("Le personnage a faim.")
                 return redirect('character_detail', pk=pk)
             elif character.etat == 'fatigue' and nouveau_lieu.id_equip != 'Dortoir':
-                #messages.error(request, "Le personnage a sommeil.")
+                #message "Le personnage a sommeil."
+                messages.error(request, "Le personnage a sommeil.")
                 return redirect('character_detail', pk=pk)
  
 
@@ -62,10 +65,10 @@ def character_detail(request,pk):
             character.save()
 
             return redirect('character_detail', pk=character.pk)
-        
-    #messages = messages.get_messages(request)
+            
+    messages_warning = messages.get_messages(request)
     
-    return render(request, 'Poudlard/character_detail.html', {'character': character, 'equipement': equipement, 'lieu': lieu, 'form': form,})#'messages_warning': messages_warning})
+    return render(request, 'Poudlard/character_detail.html', {'character': character, 'equipement': equipement, 'lieu': lieu, 'form': form, 'messages_warning': messages_warning})
 
 def equipement_detail(request,pk):
     equipement = get_object_or_404(Equipement, pk=pk)
