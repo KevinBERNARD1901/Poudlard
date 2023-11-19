@@ -36,13 +36,17 @@ def character_detail(request,pk):
                 messages.error(request, f"{character.id_character} a sommeil.", extra_tags='danger')
                 return redirect('character_detail', pk=pk)
 
-            elif nouveau_lieu.disponibilite == 'occupe':
-                #message "Le lieu d'arrivée est occupé. Choisissez un autre lieu."
-                liste_occupants = []
-                for occupant in occupants_nouveau_lieu:
-                    liste_occupants.append(occupant.id_character)
-                messages.error(request, f"Le lieu d'arrivée est occupé par {liste_occupants}. Choississez un autre lieu.", extra_tags='danger')
-                return redirect('character_detail', pk=pk) 
+            elif nouveau_lieu.disponibilite == 'occupe' and nouveau_lieu.id_equip != 'Terrain de Quidditch':
+                # message "Le lieu d'arrivée est occupé. Choisissez un autre lieu."
+                liste_occupants = ', '.join(occupant.id_character for occupant in occupants_nouveau_lieu)
+                messages.error(request, f"Le lieu d'arrivée est occupé par {liste_occupants}. Choisissez un autre lieu.", extra_tags='danger')
+                return redirect('character_detail', pk=pk)
+
+            elif nouveau_lieu.id_equip == 'Terrain de Quidditch' and len(occupants_nouveau_lieu) >= 6:
+                # message "Le Terrain de Quidditch est occupé par 6 personnes. Choisissez un autre lieu."
+                liste_occupants = ', '.join(occupant.id_character for occupant in occupants_nouveau_lieu)
+                messages.error(request, f"Le Terrain de Quidditch est occupé par 6 personnes : {liste_occupants}. Choisissez un autre lieu.", extra_tags='danger')
+                return redirect('character_detail', pk=pk)
 
             # Mise à jour du lieu d'origine
             ancien_lieu = get_object_or_404(Equipement, id_equip=character.lieu.id_equip)
