@@ -10,17 +10,16 @@
     </div>
     <div>
         <h1 class="text-center">
-            {{ lieu.id_equip }}
+            <a href="{% url 'equipement_detail' pk=equipement.pk %}">{{ equipement.id_equip }}</a>
         </h1>
         <img class="imageCharacter" src="{% static 'media/' %}{{ lieu.photo }}" alt="{{ lieu.id_equip }}">
     </div>
-        
+    <br/>
     <div>
         <h2 class="text-center">
             {{ character.etat }}
         </h2>
     </div>
-
     <div class="text-center">
         <form method="POST" class="post-form">{% csrf_token %}
             <b> Changer : </b> {{ form.as_ul }}

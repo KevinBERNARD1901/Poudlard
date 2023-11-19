@@ -11,5 +11,14 @@
                 <img class="imageCharacter" src="{% static 'media/' %}{{ character.photo }}" alt="{{ character.id_character }}">
             </div>
         {% endfor %}
+        <br/>
+        {% for equipement in equipements %}
+            <div class="character">
+                <h2 class="text-center">
+                    <a href="{% url 'equipement_detail' pk=equipement.pk %}">{{ equipement.id_equip }}</a>
+                </h2>
+                <img class="imageCharacter" src="{% static 'media/' %}{{ equipement.photo }}" alt="{{ equipement.id_equip }}">
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

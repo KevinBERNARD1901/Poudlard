@@ -80,11 +80,11 @@ h4 {
     height : 400px;
 }
 
+.imageBackground{
+    height : 200px;
+}
+
 .character{
     display: inline-block;
     margin-right: 50px;
-}
-
-.imageBackground{
-    height : 600px;
 }

@@ -8,7 +8,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 def character_list(request):
     characters = Character.objects.all()
-    return render(request, 'Poudlard/character_list.html', {'characters': characters})
+    equipements = Equipement.objects.all()
+    return render(request, 'Poudlard/character_list.html', {'characters': characters, 'equipements': equipements})
 
 def character_detail(request,pk):
     character = get_object_or_404(Character, pk=pk)
@@ -64,4 +65,9 @@ def character_detail(request,pk):
         
     #messages = messages.get_messages(request)
     
-    return render(request, 'Poudlard/character_detail.html', {'character': character, 'lieu': lieu, 'form': form,})#'messages_warning': messages_warning})
+    return render(request, 'Poudlard/character_detail.html', {'character': character, 'equipement': equipement, 'lieu': lieu, 'form': form,})#'messages_warning': messages_warning})
+
+def equipement_detail(request,pk):
+    equipement = get_object_or_404(Equipement, pk=pk)
+    characters = Character.objects.filter(lieu = equipement.id_equip)
+    return render(request, 'Poudlard/equipement_detail.html', {'characters': characters, 'equipement': equipement})
