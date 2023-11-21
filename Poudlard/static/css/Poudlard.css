@@ -84,6 +84,26 @@ h4 {
     height : 200px;
 }
 
+.gryffondor{
+    color: #740001;
+}
+
+.poufsouffle{
+    color: #ecb939;
+}
+
+.serdaigle{
+    color: #14308b;
+}
+
+.serpentard{
+    color: #206137;
+}
+
+.enseignant{
+    color: #000000;
+}
+
 .character{
     display: inline-block;
     margin-right: 50px;

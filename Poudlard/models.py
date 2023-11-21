@@ -14,6 +14,7 @@ class Character(models.Model):
     type = models.CharField(max_length=30)
     race = models.CharField(max_length=20)
     photo = models.CharField(max_length=200)
+    famille = models.CharField(max_length=50)
     lieu = models.ForeignKey(Equipement, on_delete=models.CASCADE)
     def __str__(self):
         return self.id_character
