@@ -1,0 +1,25 @@
+{% extends 'Poudlard/base.html' %}
+{% load static%}
+
+{% block content %}
+    <div class="row">
+        <div class="character">
+            <h2 class="text-center">
+                <img src="{% static 'media/blason_poudlard.png' %}" alt="{{ "Blason" }}" usemap="#blason_poudlardMap">
+                <map name="blason_poudlardMap">
+                    <!-- Quadrant supérieur gauche -->
+                    <area shape="rect" coords="0,0,390,412" alt="Quadrant supérieur gauche" href="{% url 'character_detail' pk='Harry Potter' %}">
+                
+                    <!-- Quadrant supérieur droit -->
+                    <area shape="rect" coords="390,0,780,412" alt="Quadrant supérieur droit" href="{% url 'character_detail' pk='Ron Weasley' %}">
+                
+                    <!-- Quadrant inférieur gauche -->
+                    <area shape="rect" coords="0,412,390,824" alt="Quadrant inférieur gauche" href="{% url 'character_detail' pk='Hermione Granger' %}">
+                
+                    <!-- Quadrant inférieur droit -->
+                    <area shape="rect" coords="390,412,780,824" alt="Quadrant inférieur droit" href="{% url 'character_detail' pk='Albus Dumbledore' %}">
+                </map>
+            </h2>
+        </div>
+    </div>
+{% endblock %}

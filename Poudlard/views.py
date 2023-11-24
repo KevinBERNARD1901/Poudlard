@@ -6,6 +6,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 # Create your views here.
 
+def home(request):
+    characters = Character.objects.all()
+    return render(request, 'Poudlard/home.html', {'characters': characters})
+
 def character_list(request):
     characters = Character.objects.all()
     equipements = Equipement.objects.all()
