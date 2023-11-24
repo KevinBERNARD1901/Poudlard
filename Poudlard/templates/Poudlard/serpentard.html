@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Serpentard</title>
-</head>
-<body>
-    <h1>Bienvenue à Serpentard</h1>
-    <p>Cette page est dédiée à la maison Serpentard de Poudlard.</p>
+{% extends 'Poudlard/base.html' %}
+{% load static%}
+
+{% block maison %}
+<body class="serpentard_page">
+    <div class="page-header_serpentard">
+        <h1><a href="/">Poudlard</a></h1>
+    </div>
+    <div>
+        "hello"
+    </div>
 </body>
-</html>
+{% endblock %}

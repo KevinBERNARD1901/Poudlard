@@ -89,7 +89,7 @@ h4 {
 }
 
 .poufsouffle{
-    color: #ecb939;
+    color: #e4a915;
 }
 
 .serdaigle{
@@ -112,3 +112,108 @@ h4 {
 .imageBlason{
     height: 600px;
 }
+
+.page-header_gryffondor {
+    background-color: #740001;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 10px 0;
+}
+
+.page-header_gryffondor h1,
+.page-header_gryffondor h1 a,
+.page-header_gryffondor h1 a:visited,
+.page-header_gryffondor h1 a:active {
+    color: #ffffff;
+    font-size: 128pt;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Lumos', sans-serif;
+}
+
+.gryffondor_page {
+    background-image: url('../media/salle_commune_gryffondor.jpg');
+    background-color: #740001;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.page-header_serpentard {
+    background-color: #206137;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 10px 0;
+}
+
+.page-header_serpentard h1,
+.page-header_serpentard h1 a,
+.page-header_serpentard h1 a:visited,
+.page-header_serpentard h1 a:active {
+    color: #ffffff;
+    font-size: 128pt;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Lumos', sans-serif;
+}
+
+.serpentard_page {
+    background-image: url('../media/salle_commune_serpentard.jpg');
+    background-color: #206137;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.page-header_serdaigle {
+    background-color: #14308b;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 10px 0;
+}
+
+.page-header_serdaigle h1,
+.page-header_serdaigle h1 a,
+.page-header_serdaigle h1 a:visited,
+.page-header_serdaigle h1 a:active {
+    color: #ffffff;
+    font-size: 128pt;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Lumos', sans-serif;
+}
+
+.serdaigle_page {
+    background-image: url('../media/salle_commune_serdaigle.png');
+    background-color: #14308b;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.page-header_poufsouffle {
+    background-color: #e4a915;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 10px 0;
+}
+
+.page-header_poufsouffle h1,
+.page-header_poufsouffle h1 a,
+.page-header_poufsouffle h1 a:visited,
+.page-header_poufsouffle h1 a:active {
+    color: #ffffff;
+    font-size: 128pt;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Lumos', sans-serif;
+}
+
+.poufsouffle_page {
+    background-image: url('../media/salle_commune_poufsouffle.jpg');
+    background-color: #e4a915;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+

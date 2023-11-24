@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Poufsouffle</title>
-</head>
-<body>
-    <h1>Welcome to Poufsouffle!</h1>
-    <p>This is the template for the Poufsouffle page.</p>
+{% extends 'Poudlard/base.html' %}
+{% load static%}
+
+{% block maison %}
+<body class="poufsouffle_page">
+    <div class="page-header_poufsouffle">
+        <h1><a href="/">Poudlard</a></h1>
+    </div>
+    <div>
+        "hello"
+    </div>
 </body>
-</html>
+{% endblock %}

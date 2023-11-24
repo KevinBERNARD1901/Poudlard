@@ -1,0 +1,18 @@
+{% extends 'Poudlard/base.html' %}
+
+{% block classic %}
+<body>
+    <div class="page-header">
+        <h1><a href="/">Poudlard</a></h1>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-12 text-center d-flex flex-wrap">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

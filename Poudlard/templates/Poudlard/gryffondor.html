@@ -1,9 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Gryffondor</title>
-</head>
-<body>
-    <h1>Welcome to Gryffindor!</h1>
+{% extends 'Poudlard/base.html' %}
+{% load static%}
+
+{% block maison %}
+<body class="gryffondor_page">
+    <div class="page-header_gryffondor">
+        <h1><a href="/">Poudlard</a></h1>
+    </div>
+    <div>
+        "hello"
+    </div>
 </body>
-</html>
+{% endblock %}
