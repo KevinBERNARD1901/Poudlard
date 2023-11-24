@@ -10,6 +10,22 @@ def home(request):
     characters = Character.objects.all()
     return render(request, 'Poudlard/home.html', {'characters': characters})
 
+def gryffondor(request):
+    characters = Character.objects.filter(maison = 'Gryffondor')
+    return render(request, 'Poudlard/gryffondor.html', {'characters': characters})
+
+def serpentard(request):
+    characters = Character.objects.filter(maison = 'Serpentard')
+    return render(request, 'Poudlard/serpentard.html', {'characters': characters})
+
+def poufsouffle(request):
+    characters = Character.objects.filter(maison = 'Poufsouffle')
+    return render(request, 'Poudlard/poufsouffle.html', {'characters': characters})
+
+def serdaigle(request):
+    characters = Character.objects.filter(maison = 'Serdaigle')
+    return render(request, 'Poudlard/serdaigle.html', {'characters': characters})
+
 def character_list(request):
     characters = Character.objects.all()
     equipements = Equipement.objects.all()
