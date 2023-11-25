@@ -4,10 +4,20 @@
 {% block maison %}
 <body class="gryffondor_page">
     <div class="page-header_gryffondor">
+        <a href="/">
+            <img class="imageBlasonMaison" src="{% static 'media/blason_gryffondor.png' %}" alt='Blason Gryffondor'/>
+        </a>
         <h1><a href="/">Poudlard</a></h1>
     </div>
-    <div>
-        "hello"
+    <div class="character-row">
+    {% for character in characters %}
+    <div class="character">
+        <h2 class="text-center">
+            <a class="gryffondor" href ="{% url 'character_detail' pk=character.id_character %}">{{ character.id_character }} </a>
+        </h2>
+        <img class="imageCharacter" src="{% static 'media/' %}{{ character.photo }}" alt="{{ character.id_character }}"/>
+    </div>
+    {% endfor %}
     </div>
 </body>
 {% endblock %}

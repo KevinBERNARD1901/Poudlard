@@ -105,12 +105,21 @@ h4 {
 }
 
 .character{
-    display: inline-block;
-    margin-right: 50px;
+    margin: 0 30px;
+}
+
+.character-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .imageBlason{
     height: 600px;
+}
+
+.imageBlasonMaison{
+    height: 100px;
 }
 
 .page-header_gryffondor {
@@ -137,6 +146,9 @@ h4 {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .page-header_serpentard {
