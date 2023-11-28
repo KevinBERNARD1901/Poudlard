@@ -85,7 +85,7 @@ h4 {
 }
 
 .gryffondor{
-    color: #740001;
+    color: #ffffff;
 }
 
 .poufsouffle{
@@ -106,6 +106,13 @@ h4 {
 
 .character{
     margin: 0 30px;
+}
+
+.character h2{
+    text-align: center;
+    position: relative;
+    top: 5%;
+    transform: translateY(-5%);
 }
 
 .character-row {
@@ -162,6 +169,22 @@ h4 {
     text-decoration: none;
     text-align: center;
     font-family: 'Lumos', sans-serif;
+}
+
+.imageBackgroundGryffondor{
+    position: relative;
+    height : 495px;
+    width: 215px;
+    background-color: #740001;
+    border-radius: 25px;
+}
+
+.imageCharacterGryffondor{
+    height : 400px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .page-header_serpentard {
