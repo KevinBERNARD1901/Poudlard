@@ -149,14 +149,19 @@ h4 {
 }
 
 .page-header_gryffondor h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.page-header_gryffondor h1 a,
+.page-header_gryffondor h1 a:visited,
+.page-header_gryffondor h1 a:active {
     color: #ffffff;
     font-size: 128pt;
     text-decoration: none;
     text-align: center;
     font-family: 'Lumos', sans-serif;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .page-header_serpentard {
