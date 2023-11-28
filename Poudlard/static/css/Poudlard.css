@@ -111,8 +111,7 @@ h4 {
 .character h2{
     text-align: center;
     position: relative;
-    top: 5%;
-    transform: translateY(-5%);
+    color: #ffffff;
 }
 
 .character-row {
@@ -128,7 +127,7 @@ h4 {
 .imageBlasonMaison {
     grid-column: 1;
     height: 100px;
-    /*margin-right: 20px;*/
+    margin-left: 40px;
 }
 
 .gryffondor_page {
@@ -174,17 +173,28 @@ h4 {
 .imageBackgroundGryffondor{
     position: relative;
     height : 495px;
-    width: 215px;
+    width: 220px;
     background-color: #740001;
     border-radius: 25px;
+    border: 5px solid #ffffff;
 }
 
 .imageCharacterGryffondor{
     height : 400px;
     position: relative;
-    top: 50%;
+    top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -10%);
+}
+
+.serpentard_page {
+    background-image: url('../media/salle_commune_serpentard.jpg');
+    background-color: #206137;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .page-header_serpentard {
@@ -192,9 +202,21 @@ h4 {
     margin-top: 0;
     margin-bottom: 40px;
     padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.page-header_serpentard h1,
+.page-header_serpentard img{
+    height: 200px;
+}
+
+.page-header_serpentard h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .page-header_serpentard h1 a,
 .page-header_serpentard h1 a:visited,
 .page-header_serpentard h1 a:active {
@@ -205,38 +227,31 @@ h4 {
     font-family: 'Lumos', sans-serif;
 }
 
-.serpentard_page {
-    background-image: url('../media/salle_commune_serpentard.jpg');
+.imageBackgroundSerpentard{
+    position: relative;
+    height : 495px;
+    width: 220px;
     background-color: #206137;
+    border-radius: 25px;
+    border: 5px solid #ffffff;
+}
+
+.imageCharacterSerpentard{
+    height : 400px;
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+
+.poufsouffle_page {
+    background-image: url('../media/salle_commune_poufsouffle.jpg');
+    background-color: #e4a915;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-}
-
-.page-header_serdaigle {
-    background-color: #14308b;
-    margin-top: 0;
-    margin-bottom: 40px;
-    padding: 10px 0;
-}
-
-.page-header_serdaigle h1,
-.page-header_serdaigle h1 a,
-.page-header_serdaigle h1 a:visited,
-.page-header_serdaigle h1 a:active {
-    color: #ffffff;
-    font-size: 128pt;
-    text-decoration: none;
-    text-align: center;
-    font-family: 'Lumos', sans-serif;
-}
-
-.serdaigle_page {
-    background-image: url('../media/salle_commune_serdaigle.png');
-    background-color: #14308b;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .page-header_poufsouffle {
@@ -244,9 +259,21 @@ h4 {
     margin-top: 0;
     margin-bottom: 40px;
     padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.page-header_poufsouffle h1,
+.page-header_poufsouffle img{
+    height: 200px;
+}
+
+.page-header_poufsouffle h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .page-header_poufsouffle h1 a,
 .page-header_poufsouffle h1 a:visited,
 .page-header_poufsouffle h1 a:active {
@@ -257,11 +284,76 @@ h4 {
     font-family: 'Lumos', sans-serif;
 }
 
-.poufsouffle_page {
-    background-image: url('../media/salle_commune_poufsouffle.jpg');
+.imageBackgroundPoufsouffle{
+    position: relative;
+    height : 495px;
+    width: 220px;
     background-color: #e4a915;
+    border-radius: 25px;
+    border: 5px solid #ffffff;
+}
+
+.imageCharacterPoufsouffle{
+    height : 400px;
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+
+.serdaigle_page {
+    background-image: url('../media/salle_commune_serdaigle.png');
+    background-color: #14308b;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    display: flex;
+    flex-direction: column;
 }
 
+.page-header_serdaigle {
+    background-color: #14308b;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.page-header_serdaigle img{
+    height: 200px;
+}
+
+.page-header_serdaigle h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.page-header_serdaigle h1 a,
+.page-header_serdaigle h1 a:visited,
+.page-header_serdaigle h1 a:active {
+    color: #ffffff;
+    font-size: 128pt;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Lumos', sans-serif;
+}
+
+.imageBackgroundSerdaigle{
+    position: relative;
+    height : 495px;
+    width: 220px;
+    background-color: #14308b;
+    border-radius: 25px;
+    border: 5px solid #ffffff;
+}
+
+.imageCharacterSerdaigle{
+    height : 400px;
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}

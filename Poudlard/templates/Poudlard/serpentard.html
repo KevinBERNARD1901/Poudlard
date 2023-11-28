@@ -4,10 +4,24 @@
 {% block maison %}
 <body class="serpentard_page">
     <div class="page-header_serpentard">
+        <a href="/">
+            <img class="imageBlasonMaison" src="{% static 'media/blason_serpentard.png' %}" alt='Blason Serpentard'/>
+        </a>
         <h1><a href="/">Poudlard</a></h1>
     </div>
-    <div>
-        "hello"
+    <div class="character-row">
+        {% for character in characters %}
+            <div class="character">
+                <a href="{% url 'character_detail' pk=character.id_character %}">
+                <div class="imageBackgroundSerpentard">
+                    <h2>
+                        {{character.id_character}}
+                    </h2>
+                    <img class="imageCharacterSerpentard" src="{% static 'media/' %}{{ character.photo }}" alt="{{ character.id_character }}"/>
+                </div>
+                </a>
+            </div>
+        {% endfor %}
     </div>
 </body>
 {% endblock %}

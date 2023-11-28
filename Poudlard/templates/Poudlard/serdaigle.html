@@ -4,10 +4,24 @@
 {% block maison %}
 <body class="serdaigle_page">
     <div class="page-header_serdaigle">
+        <a href="/">
+            <img class="imageBlasonMaison" src="{% static 'media/blason_serdaigle.png' %}" alt='Blason Serdaigle'/>
+        </a>
         <h1><a href="/">Poudlard</a></h1>
     </div>
-    <div>
-        "hello"
+    <div class="character-row">
+        {% for character in characters %}
+            <div class="character">
+                <a href="{% url 'character_detail' pk=character.id_character %}">
+                <div class="imageBackgroundSerdaigle">
+                    <h2>
+                        {{character.id_character}}
+                    </h2>
+                    <img class="imageCharacterSerdaigle" src="{% static 'media/' %}{{ character.photo }}" alt="{{ character.id_character }}"/>
+                </div>
+                </a>
+            </div>
+        {% endfor %}
     </div>
 </body>
 {% endblock %}

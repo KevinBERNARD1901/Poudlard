@@ -4,10 +4,24 @@
 {% block maison %}
 <body class="poufsouffle_page">
     <div class="page-header_poufsouffle">
+        <a href="/">
+            <img class="imageBlasonMaison" src="{% static 'media/blason_poufsouffle.png' %}" alt='Blason poufsouffle'/>
+        </a>
         <h1><a href="/">Poudlard</a></h1>
     </div>
-    <div>
-        "hello"
+    <div class="character-row">
+        {% for character in characters %}
+            <div class="character">
+                <a href="{% url 'character_detail' pk=character.id_character %}">
+                <div class="imageBackgroundPoufsouffle">
+                    <h2>
+                        {{character.id_character}}
+                    </h2>
+                    <img class="imageCharacterPoufsouffle" src="{% static 'media/' %}{{ character.photo }}" alt="{{ character.id_character }}"/>
+                </div>
+                </a>
+            </div>
+        {% endfor %}
     </div>
 </body>
 {% endblock %}
