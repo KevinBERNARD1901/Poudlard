@@ -1,25 +1,33 @@
-{% extends 'Poudlard/classic.html' %}
+{% extends 'Poudlard/base.html' %}
 {% load static%}
 
-{% block content %}
-    <div class="row">
-        <div class="character">
-            <h2 class="text-center">
-                <img src="{% static 'media/blason_poudlard.png' %}" alt="{{ "Blason" }}" usemap="#blason_poudlardMap">
-                <map name="blason_poudlardMap">
-                    <!-- Quadrant supérieur gauche -->
-                    <area shape="rect" coords="0,0,390,412" alt="Gryffondor" href="{% url 'gryffondor' %}">
-                
-                    <!-- Quadrant supérieur droit -->
-                    <area shape="rect" coords="390,0,780,412" alt="Serpentard" href="{% url 'serpentard' %}">
-                
-                    <!-- Quadrant inférieur gauche -->
-                    <area shape="rect" coords="0,412,390,824" alt="Poufsouffle" href="{% url 'poufsouffle' %}">
-                
-                    <!-- Quadrant inférieur droit -->
-                    <area shape="rect" coords="390,412,780,824" alt="Serdaigle" href="{% url 'serdaigle' %}">
-                </map>
-            </h2>
-        </div>
+{% block maison %}
+<body>
+    <div class="page-header">
+        <h1><a href="/">Poudlard</a></h1>
     </div>
+    <div class="content container">
+ 
+                <div class="row">
+                    <div class="character">
+                        <h2 class="text-center">
+                            <img src="{% static 'media/blason_poudlard.png' %}" alt="{{ "Blason" }}" usemap="#blason_poudlardMap">
+                            <map name="blason_poudlardMap">
+                                <!-- Quadrant supérieur gauche -->
+                                <area shape="rect" coords="0,0,390,412" alt="Gryffondor" href="{% url 'gryffondor' %}">
+                        
+                                <!-- Quadrant supérieur droit -->
+                                <area shape="rect" coords="390,0,780,412" alt="Serpentard" href="{% url 'serpentard' %}">
+                
+                                <!-- Quadrant inférieur gauche -->
+                                <area shape="rect" coords="0,412,390,824" alt="Poufsouffle" href="{% url 'poufsouffle' %}">
+                
+                                <!-- Quadrant inférieur droit -->
+                                <area shape="rect" coords="390,412,780,824" alt="Serdaigle" href="{% url 'serdaigle' %}">
+                            </map>
+                        </h2>
+                    </div>
+                </div>
+    </div>
+</body>
 {% endblock %}

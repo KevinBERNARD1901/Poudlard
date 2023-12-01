@@ -103,3 +103,7 @@ def equipement_detail(request,pk):
     equipement = get_object_or_404(Equipement, pk=pk)
     characters = Character.objects.filter(lieu = equipement.id_equip)
     return render(request, 'Poudlard/equipement_detail.html', {'characters': characters, 'equipement': equipement})
+
+def carte_du_maraudeur(request):
+    characters = Character.objects.all()
+    return render(request, 'Poudlard/carte_du_maraudeur.html', {'characters': characters})
