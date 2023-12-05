@@ -6,7 +6,269 @@
     <div class="page-header">
         <h1><a href="/">Poudlard</a></h1>
     </div>
-    <div class="carteDuMaraudeur">
-    </div>
+    <div id="mapid" style="height: 100%; width: 100%;"></div>
+    <script>
+        var imageUrl = "{% static 'media/carte_du_maraudeur.jpg' %}";
+        var imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
+        var mymap = L.map('mapid', { zoomControl: false}).fitBounds(imageBounds);
+
+        L.imageOverlay(imageUrl, imageBounds).addTo(mymap);
+        mymap.setMinZoom(13);
+        mymap.setMaxZoom(14);
+
+        //Création des lieux :
+        var PoudlardIcon = L.divIcon({
+            className: 'poudlard_icon',
+            html: "<div class='poudlard_icon></div>",
+            iconSize: [60, 60], 
+            iconAnchor: [30, 30], 
+            popupAnchor: [13, -76]
+        });
+        var PoudlardCoords = [40.75000, -74.16];
+        var Poudlard = L.marker(PoudlardCoords, {icon: PoudlardIcon}).addTo(mymap);
+        var popup = Poudlard.bindPopup("<b>Poudlard</b><br>Poudlard est une école de magie pour jeunes sorciers et sorcières située en Écosse. Elle est dirigée par le directeur Albus Dumbledore, et est considérée comme l'un des meilleurs établissements d'enseignement magique au monde. Les enfants y sont envoyés dès l'âge de onze ans, et y restent jusqu'à la fin de leur septième année.");
+
+        var PreAuLardIcon = L.divIcon({
+            className: 'preaulard_icon',
+            html: "<div class='preaulard_icon></div>",
+            iconSize: [60, 60], 
+            iconAnchor: [30, 30], 
+            popupAnchor: [13, -76]
+        });
+        var PreAuLardCoords = [40.73500, -74.1814];
+        var PreAuLard = L.marker(PreAuLardCoords, {icon: PreAuLardIcon}).addTo(mymap);
+        var popup = PreAuLard.bindPopup("<b>Pré au Lard</b><br>Le village de Pré-au-Lard est un village sorcier situé en Écosse, près de Poudlard. Il est peuplé de sorciers et sorcières, et est le seul village de Grande-Bretagne à être peuplé uniquement de sorciers.");
+        
+        /*var PreAuLardPetit = L.divIcon({
+            className: 'preaulard_icon',
+            html: "<div class='preaulardpetit_icon></div>",
+            iconSize: [50, 50], 
+            iconAnchor: [30, 30], 
+            popupAnchor: [13, -76]
+        });
+        var PreAuLardPetitCoords = [40.73500, -74.1814];
+        var PreAuLardPetit = L.marker(PreAuLardPetitCoords, {icon: PreAuLardPetit}).addTo(mymap);*/
+
+        var CabaneDeHagridIcon = L.divIcon({
+            className: 'cabanedehagrid_icon',
+            html: "<div class='cabanedehagrid_icon></div>",
+            iconSize: [60, 60], 
+            iconAnchor: [30, 30], 
+            popupAnchor: [13, -76]
+        });
+        var CabaneDeHagridCoords = [40.735, -74.145];
+        var CabaneDeHagrid = L.marker(CabaneDeHagridCoords, {icon: CabaneDeHagridIcon}).addTo(mymap);
+        var popup = CabaneDeHagrid.bindPopup("<b>Cabane de Hagrid</b><br>La cabane de Hagrid est une petite maison en bois située dans le parc de Poudlard, près du lac. Elle est habitée par Rubeus Hagrid, le garde-chasse et professeur de soins aux créatures magiques de l'école.");
+
+        //Création des characters :
+        var characters = {{ characters_json|safe }};
+        var charactersPreAuLard = [];
+        var lengthPreAuLard = 0;
+        var charactersCabaneDeHagrid = [];
+        var lengthCabaneDeHagrid = 0;
+        console.log(characters);
+        for (var i = 0; i< characters.length; i++) {
+            var character = characters[i];
+            if (character.lieu_id == 'Pre au Lard'){
+                charactersPreAuLard.push(character);
+                lengthPreAuLard += 1;
+            }
+            else if (character.lieu_id == "Cabane de Hagrid"){
+                charactersCabaneDeHagrid.push(character);
+                lengthCabaneDeHagrid += 1;
+            }
+        }
+
+        if (lengthPreAuLard > 0) {
+            for (var i = 0; i < lengthPreAuLard; i++) {
+                var character = charactersPreAuLard[i];
+                var urlPhoto = character.photo;
+                var url_image = "/static/media/" + urlPhoto;
+                var characterIcon = L.divIcon({
+                    className: 'icon_rond',
+                    html: "<div style='background-image: url(" + url_image + "); background-size: contain; background-position: center; background-color: white; background-repeat: no-repeat;'></div>",
+                    iconSize: [40, 40], 
+                    iconAnchor: [30, 30], 
+                    popupAnchor: [13, -76]
+                });
+                if (i==0){
+                    var character0Coords_PreAuLard = [40.735, -74.1885];
+                    var character0PreAuLard = L.marker(character0Coords_PreAuLard, {icon: characterIcon});
+                }
+                else if (i==1){
+                    var character1Coords_PreAuLard = [40.729, -74.188];
+                    var character1PreAuLard = L.marker(character1Coords_PreAuLard, {icon: characterIcon});
+                }
+                else if (i==2){
+                    var character2Coords_PreAuLard = [40.727, -74.17975];
+                    var character2PreAuLard = L.marker(character2Coords_PreAuLard, {icon: characterIcon});
+                }
+                else if (i==3){
+                    var character3Coords_PreAuLard = [40.729, -74.1715];
+                    var character3PreAuLard = L.marker(character3Coords_PreAuLard, {icon: characterIcon});
+                }
+                else if (i==4){
+                    var character4Coords_PreAuLard = [40.735, -74.171];
+                    var character4PreAuLard = L.marker(character4Coords_PreAuLard, {icon: characterIcon});
+                }
+            }
+        }
+
+        if (charactersCabaneDeHagrid.length > 0) {
+            for (var i = 0; i < charactersCabaneDeHagrid.length; i++){
+            var character = charactersCabaneDeHagrid[i];
+            var urlPhoto = character.photo;
+            var url_image = "/static/media/" + urlPhoto;
+            var characterIcon = L.divIcon({
+                className: 'icon_rond',
+                html: "<div style='background-image: url(" + url_image + "); background-size: contain; background-position: center; background-color: white; background-repeat: no-repeat;'></div>",
+                iconSize: [40, 40], 
+                iconAnchor: [30, 30], 
+                popupAnchor: [13, -76]
+            });
+            if (character.name == "Hagrid"){
+                var HagridCoords = [40.801100, -74.22030];
+                var HagridMarker = L.marker(HagridCoords, {icon: characterIcon});
+            }
+            else{
+                if (i==0){
+                    var character0Coords_CabaneDeHagrid = [40.729, -74.1516];
+                    var character0CabaneDeHagrid = L.marker(character0Coords_CabaneDeHagrid, {icon: characterIcon});
+                }
+                else if (i==1){
+                    var character1Coords_CabaneDeHagrid = [40.727, -74.14335];
+                    var character1CabaneDeHagrid = L.marker(character1Coords_CabaneDeHagrid, {icon: characterIcon});
+                }
+                else if (i==2){
+                    var character2Coords_CabaneDeHagrid = [40.729, -74.1352];
+                    var character2CabaneDeHagrid = L.marker(character2Coords_CabaneDeHagrid, {icon: characterIcon});
+                }
+            }
+            //var popup = characterCabaneDeHagrid.bindPopup("<b>" + character.name + "</b>");
+            }
+        }
+
+        //Ajout des écouteurs d'événements :
+
+        var threshold = 1000;
+
+        mymap.on('mousemove', function(e) {
+            // Obtenez la position de la souris
+            var mousePosition = e.latlng;
+
+            // Calculez la distance entre la position de la souris et le marqueur
+            var distance = mousePosition.distanceTo(PreAuLard.getLatLng());
+            var distance2 = mousePosition.distanceTo(CabaneDeHagrid.getLatLng());
+
+            // Si la distance est supérieure au seuil
+            if (distance > threshold) {
+                // Exécutez le code que vous voulez
+                if (character4PreAuLard != undefined){
+                    character4PreAuLard.removeFrom(mymap);
+                    character3PreAuLard.removeFrom(mymap);
+                    character2PreAuLard.removeFrom(mymap);
+                    character1PreAuLard.removeFrom(mymap);
+                    character0PreAuLard.removeFrom(mymap);
+                }
+                else if (character3PreAuLard != undefined){
+                    character3PreAuLard.removeFrom(mymap);
+                    character2PreAuLard.removeFrom(mymap);
+                    character1PreAuLard.removeFrom(mymap);
+                    character0PreAuLard.removeFrom(mymap);
+                }
+                else if (character2PreAuLard != undefined){
+                    character2PreAuLard.removeFrom(mymap);
+                    character1PreAuLard.removeFrom(mymap);
+                    character0PreAuLard.removeFrom(mymap);
+                }
+                else if (character1PreAuLard != undefined){
+                    character1PreAuLard.removeFrom(mymap);
+                    character0PreAuLard.removeFrom(mymap);
+                }
+                else if (character0PreAuLard != undefined){
+                    character0PreAuLard.removeFrom(mymap);
+                }
+                console.log("Vous vous êtes éloigné du marqueur !");
+            }
+
+            if (distance2 > threshold) {
+                // Exécutez le code que vous voulez
+                if (character2CabaneDeHagrid != undefined){
+                    character2CabaneDeHagrid.removeFrom(mymap);
+                    character1CabaneDeHagrid.removeFrom(mymap);
+                    character0CabaneDeHagrid.removeFrom(mymap);
+                }
+                else if (character1CabaneDeHagrid != undefined){
+                    character1CabaneDeHagrid.removeFrom(mymap);
+                    character0CabaneDeHagrid.removeFrom(mymap);
+                }
+                else if (character0CabaneDeHagrid != undefined){
+                    character0CabaneDeHagrid.removeFrom(mymap);
+                }
+                if (HagridMarker != undefined){
+                    HagridMarker.removeFrom(mymap);
+                }
+                console.log("Vous vous êtes éloigné du marqueur2 !");
+            }
+
+        });
+
+        PreAuLard.on('mouseover', function() {
+            if (character4PreAuLard != undefined){
+                character0PreAuLard.addTo(mymap);
+                character1PreAuLard.addTo(mymap);
+                character2PreAuLard.addTo(mymap);
+                character3PreAuLard.addTo(mymap);
+                character4PreAuLard.addTo(mymap);
+            }
+            else if (character3PreAuLard != undefined){
+                character0PreAuLard.addTo(mymap);
+                character1PreAuLard.addTo(mymap);
+                character2PreAuLard.addTo(mymap);
+                character3PreAuLard.addTo(mymap);
+            }
+            else if (character2PreAuLard != undefined){
+                character0PreAuLard.addTo(mymap);
+                character1PreAuLard.addTo(mymap);
+                character2PreAuLard.addTo(mymap);
+            }
+            else if (character1PreAuLard != undefined){
+                character0PreAuLard.addTo(mymap);
+                character1PreAuLard.addTo(mymap);
+            }
+            else if (character0PreAuLard != undefined){
+                character0PreAuLard.addTo(mymap);
+            }
+        });
+
+        CabaneDeHagrid.on('mouseover', function() {
+            if (character2CabaneDeHagrid != undefined){
+                character0CabaneDeHagrid.addTo(mymap);
+                character1CabaneDeHagrid.addTo(mymap);
+                character2CabaneDeHagrid.addTo(mymap);
+            }
+            else if (character1CabaneDeHagrid != undefined){
+                character0CabaneDeHagrid.addTo(mymap);
+                character1CabaneDeHagrid.addTo(mymap);
+            }
+            else if (character0CabaneDeHagrid != undefined){
+                character0CabaneDeHagrid.addTo(mymap);
+            }
+            if (HagridMarker != undefined){
+                HagridMarker.addTo(mymap);
+            }
+        });
+
+        // Ajoutez un écouteur d'événement pour l'événement 'zoomend'
+        /*mymap.on('zoomend', function() {
+            var zoomlevel = mymap.getZoom();
+            if (zoomlevel == 14) {
+                popup.openPopup();
+            }
+            else {
+                popup.closePopup();
+            }
+        });*/
+    </script>
 </body>
 {% endblock %}

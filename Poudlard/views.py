@@ -1,3 +1,4 @@
+import json
 from django.contrib import messages
 from .forms import MoveForm
 from .models import Character, Equipement
@@ -56,11 +57,11 @@ def character_detail(request,pk):
                 messages.error(request, f"{character.id_character} a sommeil.", extra_tags='danger')
                 return redirect('character_detail', pk=pk)
 
-            elif nouveau_lieu.disponibilite == 'occupe' and nouveau_lieu.id_equip != 'Terrain de Quidditch':
-                # message "Le lieu d'arrivée est occupé. Choisissez un autre lieu."
-                liste_occupants = ', '.join(occupant.id_character for occupant in occupants_nouveau_lieu)
-                messages.error(request, f"Le lieu d'arrivée est occupé par {liste_occupants}. Choisissez un autre lieu.", extra_tags='danger')
-                return redirect('character_detail', pk=pk)
+##            elif nouveau_lieu.disponibilite == 'occupe' and nouveau_lieu.id_equip != 'Terrain de Quidditch':
+##               # message "Le lieu d'arrivée est occupé. Choisissez un autre lieu."
+##                liste_occupants = ', '.join(occupant.id_character for occupant in occupants_nouveau_lieu)
+##                messages.error(request, f"Le lieu d'arrivée est occupé par {liste_occupants}. Choisissez un autre lieu.", extra_tags='danger')
+##                return redirect('character_detail', pk=pk)
 
             elif nouveau_lieu.id_equip == 'Terrain de Quidditch' and len(occupants_nouveau_lieu) >= 6:
                 # message "Le Terrain de Quidditch est occupé par 6 personnes. Choisissez un autre lieu."
@@ -106,4 +107,5 @@ def equipement_detail(request,pk):
 
 def carte_du_maraudeur(request):
     characters = Character.objects.all()
-    return render(request, 'Poudlard/carte_du_maraudeur.html', {'characters': characters})
+    characters_json = json.dumps(list(characters.values()))
+    return render(request, 'Poudlard/carte_du_maraudeur.html', {'characters_json': characters_json })
