@@ -151,6 +151,7 @@
         //Ajout des écouteurs d'événements :
 
         var threshold = 1000;
+        var compteur = 0;
 
         mymap.on('mousemove', function(e) {
             // Obtenez la position de la souris
@@ -208,6 +209,7 @@
                 if (HagridMarker != undefined){
                     HagridMarker.removeFrom(mymap);
                 }
+                compteur = 0;
                 console.log("Vous vous êtes éloigné du marqueur2 !");
             }
 
@@ -242,20 +244,77 @@
         });
 
         CabaneDeHagrid.on('mouseover', function() {
-            if (character2CabaneDeHagrid != undefined){
-                character0CabaneDeHagrid.addTo(mymap);
-                character1CabaneDeHagrid.addTo(mymap);
-                character2CabaneDeHagrid.addTo(mymap);
-            }
-            else if (character1CabaneDeHagrid != undefined){
-                character0CabaneDeHagrid.addTo(mymap);
-                character1CabaneDeHagrid.addTo(mymap);
-            }
-            else if (character0CabaneDeHagrid != undefined){
-                character0CabaneDeHagrid.addTo(mymap);
-            }
-            if (HagridMarker != undefined){
-                HagridMarker.addTo(mymap);
+            if (compteur == 0){
+                //var movingMarker = L.Marker.movingMarker([CabaneDeHagrid.getLatLng()], []).addTo(mymap);
+                //movingMarker.moveTo(PreAuLard.getLatLng(), 10000); // 10000 est la durée de l'animation en millisecondes
+                if (character2CabaneDeHagrid != undefined){
+                    //var movingMarker = L.Marker.movingMarker([CabaneDeHagrid.getLatLng()], []).addTo(mymap);
+                    var latlngs = {
+                        start_: CabaneDeHagrid.getLatLng(),
+                        end_: [40.729, -74.1516]
+                    };
+                    character0CabaneDeHagrid.addTo(mymap);
+                    $({lat: latlngs.start_.lat, lng: latlngs.start_.lng}).animate({lat: latlngs.end_[0], lng: latlngs.end_[1]}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character0CabaneDeHagrid.setLatLng([now, character0CabaneDeHagrid.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character0CabaneDeHagrid.setLatLng([character0CabaneDeHagrid.getLatLng().lat, now]);
+                            }
+                        }
+                    });
+
+                    var latlngs1 = {
+                        start_: CabaneDeHagrid.getLatLng(),
+                        end_: [40.727, -74.14335]
+                    };
+                    character1CabaneDeHagrid.addTo(mymap);
+                    $({lat: latlngs1.start_.lat, lng: latlngs1.start_.lng}).animate({lat: latlngs1.end_[0], lng: latlngs1.end_[1]}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character1CabaneDeHagrid.setLatLng([now, character1CabaneDeHagrid.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character1CabaneDeHagrid.setLatLng([character1CabaneDeHagrid.getLatLng().lat, now]);
+                            }
+                        }
+                    });
+
+                    var latlngs2 = {
+                        start_: CabaneDeHagrid.getLatLng(),
+                        end_: [40.729, -74.1352]
+                    };
+                    character2CabaneDeHagrid.addTo(mymap);
+                    $({lat: latlngs2.start_.lat, lng: latlngs2.start_.lng}).animate({lat: latlngs2.end_[0], lng: latlngs2.end_[1]}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character2CabaneDeHagrid.setLatLng([now, character2CabaneDeHagrid.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character2CabaneDeHagrid.setLatLng([character2CabaneDeHagrid.getLatLng().lat, now]);
+                            }
+                        }
+                    });
+                    console.log("test");
+
+
+                    //movingMarker.moveTo(character0CabaneDeHagrid.getLatLng(), 1000);
+                    //character0CabaneDeHagrid.addTo(mymap);
+                    //character1CabaneDeHagrid.addTo(mymap);
+                    //character2CabaneDeHagrid.addTo(mymap);
+                }
+                else if (character1CabaneDeHagrid != undefined){
+                    character0CabaneDeHagrid.addTo(mymap);
+                    character1CabaneDeHagrid.addTo(mymap);
+                }
+                else if (character0CabaneDeHagrid != undefined){
+                    character0CabaneDeHagrid.addTo(mymap);
+                }
+                if (HagridMarker != undefined){
+                    HagridMarker.addTo(mymap);
+                }
+                compteur = 1;
             }
         });
 

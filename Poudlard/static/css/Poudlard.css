@@ -449,6 +449,7 @@ h4 {
     border: 3px solid #000; /* Cela ajoute une bordure de 3px, solide et noire */
     width: 100%;
     height: 100%;
+    animation: fade-in 0.3s ease-in-out;
 }
 .icon_rond div {
     width: 100%;
