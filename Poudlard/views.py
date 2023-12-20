@@ -109,3 +109,8 @@ def carte_du_maraudeur(request):
     characters = Character.objects.all()
     characters_json = json.dumps(list(characters.values()))
     return render(request, 'Poudlard/carte_du_maraudeur.html', {'characters_json': characters_json })
+
+def carte_de_poudlard(request):
+    equipements = Equipement.objects.all()
+    equipements_json = json.dumps(list(equipements.values()))
+    return render(request, 'Poudlard/carte_de_poudlard.html', {'equipements_json': equipements_json })

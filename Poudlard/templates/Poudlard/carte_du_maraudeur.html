@@ -83,10 +83,10 @@
             for (var i = 0; i < lengthPreAuLard; i++) {
                 var character = charactersPreAuLard[i];
                 var urlPhoto = character.photo;
-                var url_image = "/static/media/" + urlPhoto;
+                var url_image = "/static/media/tete" + urlPhoto;
                 var characterIcon = L.divIcon({
                     className: 'icon_rond',
-                    html: "<div style='background-image: url(" + url_image + "); background-size: contain; background-position: center; background-color: white; background-repeat: no-repeat;'></div>",
+                    html: "<div style='background-image: url(" + url_image + "); background-size: cover; background-position: center; background-color: white; background-repeat: no-repeat;'></div>",
                     iconSize: [40, 40], 
                     iconAnchor: [30, 30], 
                     popupAnchor: [13, -76]
@@ -118,10 +118,10 @@
             for (var i = 0; i < charactersCabaneDeHagrid.length; i++){
             var character = charactersCabaneDeHagrid[i];
             var urlPhoto = character.photo;
-            var url_image = "/static/media/" + urlPhoto;
+            var url_image = "/static/media/tete" + urlPhoto;
             var characterIcon = L.divIcon({
                 className: 'icon_rond',
-                html: "<div style='background-image: url(" + url_image + "); background-size: contain; background-position: center; background-color: white; background-repeat: no-repeat;'></div>",
+                html: "<div style='background-image: url(" + url_image + "); background-size: cover; background-position: center; background-color: white; background-repeat: no-repeat;'></div>",
                 iconSize: [40, 40], 
                 iconAnchor: [30, 30], 
                 popupAnchor: [13, -76]
@@ -1044,6 +1044,18 @@
                 }
                 compteur = 1;
             }
+        });
+
+        $(CabaneDeHagrid).on("click", function() {
+            window.location.href = "http://127.0.0.1:8000/equipement/Cabane%20de%20Hagrid/";
+        });
+
+        $(PreAuLard).on("click", function() {
+            window.location.href = "http://127.0.0.1:8000/equipement/Pre%20au%20Lard/";
+        });
+
+        $(Poudlard).on("click", function() {
+            window.location.href = "http://127.0.0.1:8000/carte_de_poudlard/";
         });
 
         // Ajoutez un écouteur d'événement pour l'événement 'zoomend'

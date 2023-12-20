@@ -1,0 +1,20 @@
+{% extends 'Poudlard/base.html' %}
+{% load static%}
+
+{% block maison %}
+<body class="carteDuMaraudeur_page">
+    <div class="page-header">
+        <h1><a href="/">Poudlard</a></h1>
+    </div>
+    <div id="mapid" style="height: 100%; width: 100%;"></div>
+    <script>
+        var imageUrl = "{% static 'media/carte_de_poudlard.jpg' %}";
+        var imageBounds = [[40.712216, -74.22655], [40.773941, -74.12544]];
+        var mymap = L.map('mapid', { zoomControl: false}).fitBounds(imageBounds);
+
+        L.imageOverlay(imageUrl, imageBounds).addTo(mymap);
+        mymap.setMinZoom(13);
+        mymap.setMaxZoom(14);
+    </script>
+</body>
+{% endblock %}
