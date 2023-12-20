@@ -152,6 +152,7 @@
 
         var threshold = 1000;
         var compteur = 0;
+        var compteurP = 0;
 
         mymap.on('mousemove', function(e) {
             // Obtenez la position de la souris
@@ -163,156 +164,883 @@
 
             // Si la distance est supérieure au seuil
             if (distance > threshold) {
+                if (compteurP==1){
                 // Exécutez le code que vous voulez
                 if (character4PreAuLard != undefined){
-                    character4PreAuLard.removeFrom(mymap);
-                    character3PreAuLard.removeFrom(mymap);
-                    character2PreAuLard.removeFrom(mymap);
-                    character1PreAuLard.removeFrom(mymap);
-                    character0PreAuLard.removeFrom(mymap);
+                    var startPoint = [40.735, -74.1885];
+                    var startPoint1 = [40.729, -74.188];
+                    var startPoint2 = [40.727, -74.17975];
+                    var startPoint3 = [40.729, -74.1715];
+                    var startPoint4 = [40.735, -74.171];
+                    var endPoint = [40.735, -74.1814];
+                    var startOpacity = 1;
+                    var endOpacity = 0;
+                    $({lat: startPoint[0], lng: startPoint[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character0PreAuLard.setLatLng([now, character0PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character0PreAuLard.setLatLng([character0PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character0PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character0PreAuLard.removeFrom(mymap);
+                        }
+                    });
+
+                    $({lat: startPoint1[0], lng: startPoint1[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character1PreAuLard.setLatLng([now, character1PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character1PreAuLard.setLatLng([character1PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character1PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character1PreAuLard.removeFrom(mymap);
+                        }
+                    });
+
+                    $({lat: startPoint2[0], lng: startPoint2[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character2PreAuLard.setLatLng([now, character2PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character2PreAuLard.setLatLng([character2PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character2PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character2PreAuLard.removeFrom(mymap);
+                        }
+                    });
+
+                    $({lat: startPoint3[0], lng: startPoint3[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character3PreAuLard.setLatLng([now, character3PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character3PreAuLard.setLatLng([character3PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character3PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character3PreAuLard.removeFrom(mymap);
+                        }
+                    });
+
+                    $({lat: startPoint4[0], lng: startPoint4[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character4PreAuLard.setLatLng([now, character4PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character4PreAuLard.setLatLng([character4PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character4PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character4PreAuLard.removeFrom(mymap);
+                        }
+                    });
                 }
                 else if (character3PreAuLard != undefined){
-                    character3PreAuLard.removeFrom(mymap);
-                    character2PreAuLard.removeFrom(mymap);
-                    character1PreAuLard.removeFrom(mymap);
-                    character0PreAuLard.removeFrom(mymap);
+                    var startPoint = [40.735, -74.1885];
+                    var startPoint1 = [40.729, -74.1715];
+                    var startPoint2 = [40.727, -74.17975];
+                    var startPoint3 = [40.729, -74.188];
+                    var endPoint = [40.735, -74.1814];
+                    var startOpacity = 1;
+                    var endOpacity = 0;
+                    $({lat: startPoint[0], lng: startPoint[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character0PreAuLard.setLatLng([now, character0PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character0PreAuLard.setLatLng([character0PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character0PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character0PreAuLard.removeFrom(mymap);
+                        }
+                    });
+
+                    $({lat: startPoint1[0], lng: startPoint1[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character1PreAuLard.setLatLng([now, character1PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character1PreAuLard.setLatLng([character1PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character1PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character1PreAuLard.removeFrom(mymap);
+                        }
+                    });
+
+                    $({lat: startPoint2[0], lng: startPoint2[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character2PreAuLard.setLatLng([now, character2PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character2PreAuLard.setLatLng([character2PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character2PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character2PreAuLard.removeFrom(mymap);
+                        }
+                    });
+
+                    $({lat: startPoint3[0], lng: startPoint3[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character3PreAuLard.setLatLng([now, character3PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character3PreAuLard.setLatLng([character3PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character3PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character3PreAuLard.removeFrom(mymap);
+                        }
+                    });
                 }
                 else if (character2PreAuLard != undefined){
-                    character2PreAuLard.removeFrom(mymap);
-                    character1PreAuLard.removeFrom(mymap);
-                    character0PreAuLard.removeFrom(mymap);
+                    var startPoint = [40.735, -74.1885];
+                    var startPoint1 = [40.729, -74.1715];
+                    var startPoint2 = [40.727, -74.17975];
+                    var endPoint = [40.735, -74.1814];
+                    var startOpacity = 1;
+                    var endOpacity = 0;
+                    $({lat: startPoint[0], lng: startPoint[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character0PreAuLard.setLatLng([now, character0PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character0PreAuLard.setLatLng([character0PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character0PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character0PreAuLard.removeFrom(mymap);
+                        }
+                    });
+
+                    $({lat: startPoint1[0], lng: startPoint1[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character1PreAuLard.setLatLng([now, character1PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character1PreAuLard.setLatLng([character1PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character1PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character1PreAuLard.removeFrom(mymap);
+                        }
+                    });
+
+                    $({lat: startPoint2[0], lng: startPoint2[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character2PreAuLard.setLatLng([now, character2PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character2PreAuLard.setLatLng([character2PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character2PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character2PreAuLard.removeFrom(mymap);
+                        }
+                    });
                 }
                 else if (character1PreAuLard != undefined){
-                    character1PreAuLard.removeFrom(mymap);
-                    character0PreAuLard.removeFrom(mymap);
+                    var startPoint = [40.735, -74.1885];
+                    var startPoint1 = [40.729, -74.1715];
+                    var endPoint = [40.735, -74.1814];
+                    var startOpacity = 1;
+                    var endOpacity = 0;
+                    $({lat: startPoint[0], lng: startPoint[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character0PreAuLard.setLatLng([now, character0PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character0PreAuLard.setLatLng([character0PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character0PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character0PreAuLard.removeFrom(mymap);
+                        }
+                    });
+
+                    $({lat: startPoint1[0], lng: startPoint1[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character1PreAuLard.setLatLng([now, character1PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character1PreAuLard.setLatLng([character1PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character1PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character1PreAuLard.removeFrom(mymap);
+                        }
+                    });
                 }
                 else if (character0PreAuLard != undefined){
-                    character0PreAuLard.removeFrom(mymap);
+                    var startPoint = [40.735, -74.1885];
+                    var endPoint = [40.735, -74.1814];
+                    var startOpacity = 1;
+                    var endOpacity = 0;
+                    $({lat: startPoint[0], lng: startPoint[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character0PreAuLard.setLatLng([now, character0PreAuLard.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character0PreAuLard.setLatLng([character0PreAuLard.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character0PreAuLard.setOpacity(now)
+                            }
+                        },
+                        complete: function() {
+                            character0PreAuLard.removeFrom(mymap);
+                        }
+                    });
                 }
-                console.log("Vous vous êtes éloigné du marqueur !");
+                compteurP = 0;
+                }
             }
 
             if (distance2 > threshold) {
                 // Exécutez le code que vous voulez
-                if (character2CabaneDeHagrid != undefined){
-                    character2CabaneDeHagrid.removeFrom(mymap);
-                    character1CabaneDeHagrid.removeFrom(mymap);
-                    character0CabaneDeHagrid.removeFrom(mymap);
+                if(compteur==1){
+                    if (character2CabaneDeHagrid != undefined){
+                        var startPoint = [40.729, -74.1516];
+                        var startPoint1 = [40.727, -74.14335];
+                        var startPoint2 = [40.729, -74.1352];
+                        var endPoint = [40.735, -74.145];
+                        var startOpacity = 1;
+                        var endOpacity = 0;
+                        $({lat: startPoint[0], lng: startPoint[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                            duration: 300, // Durée de l'animation en millisecondes
+                            step: function(now, fx) {
+                                if (fx.prop === 'lat') {
+                                    character0CabaneDeHagrid.setLatLng([now, character0CabaneDeHagrid.getLatLng().lng]);
+                                } else if (fx.prop === 'lng') {
+                                    character0CabaneDeHagrid.setLatLng([character0CabaneDeHagrid.getLatLng().lat, now]);
+                                } else if (fx.prop === 'opacity') {
+                                    character0CabaneDeHagrid.setOpacity(now)
+                                }
+                            },
+                            complete: function() {
+                                character0CabaneDeHagrid.removeFrom(mymap);
+                            }
+                        });
+                        $({lat: startPoint1[0], lng: startPoint1[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                            duration: 300, // Durée de l'animation en millisecondes
+                            step: function(now, fx) {
+                                if (fx.prop === 'lat') {
+                                    character1CabaneDeHagrid.setLatLng([now, character1CabaneDeHagrid.getLatLng().lng]);
+                                } else if (fx.prop === 'lng') {
+                                    character1CabaneDeHagrid.setLatLng([character1CabaneDeHagrid.getLatLng().lat, now]);
+                                } else if (fx.prop === 'opacity') {
+                                    character1CabaneDeHagrid.setOpacity(now)
+                                }
+                            },
+                            complete: function() {
+                                character1CabaneDeHagrid.removeFrom(mymap);
+                            }
+                        });
+                        $({lat: startPoint2[0], lng: startPoint2[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                            duration: 300, // Durée de l'animation en millisecondes
+                            step: function(now, fx) {
+                                if (fx.prop === 'lat') {
+                                    character2CabaneDeHagrid.setLatLng([now, character2CabaneDeHagrid.getLatLng().lng]);
+                                } else if (fx.prop === 'lng') {
+                                    character2CabaneDeHagrid.setLatLng([character2CabaneDeHagrid.getLatLng().lat, now]);
+                                } else if (fx.prop === 'opacity') {
+                                    character2CabaneDeHagrid.setOpacity(now)
+                                }
+                            },
+                            complete: function() {
+                                character2CabaneDeHagrid.removeFrom(mymap);
+                            }
+                        });
+                    }
+                    else if (character1CabaneDeHagrid != undefined){
+                        var startPoint = [40.729, -74.1516];
+                        var startPoint1 = [40.727, -74.14335];
+                        var endPoint = [40.735, -74.145];
+                        var startOpacity = 1;
+                        var endOpacity = 0;
+                        $({lat: startPoint[0], lng: startPoint[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                            duration: 300, // Durée de l'animation en millisecondes
+                            step: function(now, fx) {
+                                if (fx.prop === 'lat') {
+                                    character0CabaneDeHagrid.setLatLng([now, character0CabaneDeHagrid.getLatLng().lng]);
+                                } else if (fx.prop === 'lng') {
+                                    character0CabaneDeHagrid.setLatLng([character0CabaneDeHagrid.getLatLng().lat, now]);
+                                } else if (fx.prop === 'opacity') {
+                                    character0CabaneDeHagrid.setOpacity(now)
+                                }
+                            },
+                            complete: function() {
+                                character0CabaneDeHagrid.removeFrom(mymap);
+                            }
+                        });
+                        $({lat: startPoint1[0], lng: startPoint1[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                            duration: 300, // Durée de l'animation en millisecondes
+                            step: function(now, fx) {
+                                if (fx.prop === 'lat') {
+                                    character1CabaneDeHagrid.setLatLng([now, character1CabaneDeHagrid.getLatLng().lng]);
+                                } else if (fx.prop === 'lng') {
+                                    character1CabaneDeHagrid.setLatLng([character1CabaneDeHagrid.getLatLng().lat, now]);
+                                } else if (fx.prop === 'opacity') {
+                                    character1CabaneDeHagrid.setOpacity(now)
+                                }
+                            },
+                            complete: function() {
+                                character1CabaneDeHagrid.removeFrom(mymap);
+                            }
+                        });
+                    }
+                    else if (character0CabaneDeHagrid != undefined){
+                        var startPoint = [40.729, -74.1516];
+                        var endPoint = [40.735, -74.145];
+                        var startOpacity = 1;
+                        var endOpacity = 0;
+                        $({lat: startPoint[0], lng: startPoint[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                            duration: 300, // Durée de l'animation en millisecondes
+                            step: function(now, fx) {
+                                if (fx.prop === 'lat') {
+                                    character0CabaneDeHagrid.setLatLng([now, character0CabaneDeHagrid.getLatLng().lng]);
+                                } else if (fx.prop === 'lng') {
+                                    character0CabaneDeHagrid.setLatLng([character0CabaneDeHagrid.getLatLng().lat, now]);
+                                } else if (fx.prop === 'opacity') {
+                                    character0CabaneDeHagrid.setOpacity(now)
+                                }
+                            },
+                            complete: function() {
+                                character0CabaneDeHagrid.removeFrom(mymap);
+                            }
+                        });
+                    }
+                    if (HagridMarker != undefined){
+                        var startPoint = [40.801100, -74.22030];
+                        var endPoint = [40.735, -74.145];
+                        var startOpacity = 1;
+                        var endOpacity = 0;
+                        $({lat: startPoint[0], lng: startPoint[1], opacity: startOpacity}).animate({lat: endPoint[0], lng: endPoint[1], opacity: endOpacity}, {
+                            duration: 300, // Durée de l'animation en millisecondes
+                            step: function(now, fx) {
+                                if (fx.prop === 'lat') {
+                                    HagridMarker.setLatLng([now, HagridMarker.getLatLng().lng]);
+                                } else if (fx.prop === 'lng') {
+                                    HagridMarker.setLatLng([HagridMarker.getLatLng().lat, now]);
+                                } else if (fx.prop === 'opacity') {
+                                    HagridMarker.setOpacity(now)
+                                }
+                            },
+                            complete: function() {
+                                HagridMarker.removeFrom(mymap);
+                            }
+                        });
+                    }
+                    compteur = 0;
+                    console.log("Vous vous êtes éloigné du marqueur2 !");
                 }
-                else if (character1CabaneDeHagrid != undefined){
-                    character1CabaneDeHagrid.removeFrom(mymap);
-                    character0CabaneDeHagrid.removeFrom(mymap);
-                }
-                else if (character0CabaneDeHagrid != undefined){
-                    character0CabaneDeHagrid.removeFrom(mymap);
-                }
-                if (HagridMarker != undefined){
-                    HagridMarker.removeFrom(mymap);
-                }
-                compteur = 0;
-                console.log("Vous vous êtes éloigné du marqueur2 !");
             }
 
         });
 
         PreAuLard.on('mouseover', function() {
-            if (character4PreAuLard != undefined){
+            if (compteurP == 0){
+                if (character4PreAuLard != undefined){
+                var latlngs = {
+                    start_: {lat: 40.735, lng: -74.1814},
+                    end_: {lat: 40.735, lng: -74.1885}
+                };
+                var startOpacity = 0;
+                var endOpacity = 1;
                 character0PreAuLard.addTo(mymap);
+                character0PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs.start_.lat, lng: latlngs.start_.lng, opacity: startOpacity}).animate({lat: latlngs.end_.lat, lng: latlngs.end_.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character0PreAuLard.setLatLng([now, character0PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character0PreAuLard.setLatLng([character0PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character0PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+
+                var latlngs1 = {
+                    start_1: {lat: 40.735, lng: -74.1814},
+                    end_1: {lat: 40.729, lng: -74.188}
+                };
                 character1PreAuLard.addTo(mymap);
+                character1PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs1.start_1.lat, lng: latlngs1.start_1.lng, opacity: startOpacity}).animate({lat: latlngs1.end_1.lat, lng: latlngs1.end_1.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character1PreAuLard.setLatLng([now, character1PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character1PreAuLard.setLatLng([character1PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character1PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+
+                var latlngs2 = {
+                    start_2: {lat: 40.735, lng: -74.1814},
+                    end_2: {lat: 40.727, lng: -74.17975}
+                };
                 character2PreAuLard.addTo(mymap);
+                character2PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs2.start_2.lat, lng: latlngs2.start_2.lng, opacity: startOpacity}).animate({lat: latlngs2.end_2.lat, lng: latlngs2.end_2.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character2PreAuLard.setLatLng([now, character2PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character2PreAuLard.setLatLng([character2PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character2PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+
+                var latlngs3 = {
+                    start_3: {lat: 40.735, lng: -74.1814},
+                    end_3: {lat: 40.729, lng: -74.1715}
+                };
                 character3PreAuLard.addTo(mymap);
+                character3PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs3.start_3.lat, lng: latlngs3.start_3.lng, opacity: startOpacity}).animate({lat: latlngs3.end_3.lat, lng: latlngs3.end_3.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character3PreAuLard.setLatLng([now, character3PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character3PreAuLard.setLatLng([character3PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character3PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+
+                var latlngs4 = {
+                    start_4: {lat: 40.735, lng: -74.1814},
+                    end_4: {lat: 40.735, lng: -74.171}
+                };
                 character4PreAuLard.addTo(mymap);
-            }
-            else if (character3PreAuLard != undefined){
+                character4PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs4.start_4.lat, lng: latlngs4.start_4.lng, opacity: startOpacity}).animate({lat: latlngs4.end_4.lat, lng: latlngs4.end_4.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character4PreAuLard.setLatLng([now, character4PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character4PreAuLard.setLatLng([character4PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character4PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+                }
+                else if (character3PreAuLard != undefined){
+                var latlngs = {
+                    start_: {lat: 40.735, lng: -74.1814},
+                    end_: {lat: 40.735, lng: -74.1885}
+                };
+                var startOpacity = 0;
+                var endOpacity = 1;
                 character0PreAuLard.addTo(mymap);
+                character0PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs.start_.lat, lng: latlngs.start_.lng, opacity: startOpacity}).animate({lat: latlngs.end_.lat, lng: latlngs.end_.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character0PreAuLard.setLatLng([now, character0PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character0PreAuLard.setLatLng([character0PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character0PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+
+                var latlngs1 = {
+                    start_1: {lat: 40.735, lng: -74.1814},
+                    end_1: {lat: 40.729, lng: -74.188}
+                };
                 character1PreAuLard.addTo(mymap);
+                character1PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs1.start_1.lat, lng: latlngs1.start_1.lng, opacity: startOpacity}).animate({lat: latlngs1.end_1.lat, lng: latlngs1.end_1.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character1PreAuLard.setLatLng([now, character1PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character1PreAuLard.setLatLng([character1PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character1PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+
+                var latlngs2 = {
+                    start_2: {lat: 40.735, lng: -74.1814},
+                    end_2: {lat: 40.727, lng: -74.17975}
+                };
                 character2PreAuLard.addTo(mymap);
+                character2PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs2.start_2.lat, lng: latlngs2.start_2.lng, opacity: startOpacity}).animate({lat: latlngs2.end_2.lat, lng: latlngs2.end_2.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character2PreAuLard.setLatLng([now, character2PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character2PreAuLard.setLatLng([character2PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character2PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+
+                var latlngs3 = {
+                    start_3: {lat: 40.735, lng: -74.1814},
+                    end_3: {lat: 40.729, lng: -74.1715}
+                };
                 character3PreAuLard.addTo(mymap);
-            }
-            else if (character2PreAuLard != undefined){
+                character3PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs3.start_3.lat, lng: latlngs3.start_3.lng, opacity: startOpacity}).animate({lat: latlngs3.end_3.lat, lng: latlngs3.end_3.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character3PreAuLard.setLatLng([now, character3PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character3PreAuLard.setLatLng([character3PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character3PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+                }
+                else if (character2PreAuLard != undefined){
+                var latlngs = {
+                    start_: {lat: 40.735, lng: -74.1814},
+                    end_: {lat: 40.735, lng: -74.1885}
+                };
+                var startOpacity = 0;
+                var endOpacity = 1;
                 character0PreAuLard.addTo(mymap);
+                character0PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs.start_.lat, lng: latlngs.start_.lng, opacity: startOpacity}).animate({lat: latlngs.end_.lat, lng: latlngs.end_.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character0PreAuLard.setLatLng([now, character0PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character0PreAuLard.setLatLng([character0PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character0PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+
+                var latlngs1 = {
+                    start_1: {lat: 40.735, lng: -74.1814},
+                    end_1: {lat: 40.729, lng: -74.188}
+                };
                 character1PreAuLard.addTo(mymap);
+                character1PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs1.start_1.lat, lng: latlngs1.start_1.lng, opacity: startOpacity}).animate({lat: latlngs1.end_1.lat, lng: latlngs1.end_1.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character1PreAuLard.setLatLng([now, character1PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character1PreAuLard.setLatLng([character1PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character1PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+
+                var latlngs2 = {
+                    start_2: {lat: 40.735, lng: -74.1814},
+                    end_2: {lat: 40.727, lng: -74.17975}
+                };
                 character2PreAuLard.addTo(mymap);
-            }
-            else if (character1PreAuLard != undefined){
+                character2PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs2.start_2.lat, lng: latlngs2.start_2.lng, opacity: startOpacity}).animate({lat: latlngs2.end_2.lat, lng: latlngs2.end_2.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character2PreAuLard.setLatLng([now, character2PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character2PreAuLard.setLatLng([character2PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character2PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+                }
+                else if (character1PreAuLard != undefined){
+                }
+                else if (character1PreAuLard != undefined){
+                var latlngs = {
+                    start_: {lat: 40.735, lng: -74.1814},
+                    end_: {lat: 40.735, lng: -74.1885}
+                };
+                var startOpacity = 0;
+                var endOpacity = 1;
                 character0PreAuLard.addTo(mymap);
+                character0PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs.start_.lat, lng: latlngs.start_.lng, opacity: startOpacity}).animate({lat: latlngs.end_.lat, lng: latlngs.end_.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character0PreAuLard.setLatLng([now, character0PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character0PreAuLard.setLatLng([character0PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character0PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+
+                var latlngs1 = {
+                    start_1: {lat: 40.735, lng: -74.1814},
+                    end_1: {lat: 40.729, lng: -74.188}
+                };
                 character1PreAuLard.addTo(mymap);
-            }
-            else if (character0PreAuLard != undefined){
+                character1PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs1.start_1.lat, lng: latlngs1.start_1.lng, opacity: startOpacity}).animate({lat: latlngs1.end_1.lat, lng: latlngs1.end_1.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character1PreAuLard.setLatLng([now, character1PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character1PreAuLard.setLatLng([character1PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character1PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+                }
+                else if (character0PreAuLard != undefined){
+                var latlngs = {
+                    start_: {lat: 40.735, lng: -74.1814},
+                    end_: {lat: 40.735, lng: -74.1885}
+                };
+                var startOpacity = 0;
+                var endOpacity = 1;
                 character0PreAuLard.addTo(mymap);
+                character0PreAuLard.setLatLng([40.735, -74.1814]);
+                $({lat: latlngs.start_.lat, lng: latlngs.start_.lng, opacity: startOpacity}).animate({lat: latlngs.end_.lat, lng: latlngs.end_.lng, opacity: endOpacity}, {
+                    duration: 300, // Durée de l'animation en millisecondes
+                    step: function(now, fx) {
+                        if (fx.prop === 'lat') {
+                            character0PreAuLard.setLatLng([now, character0PreAuLard.getLatLng().lng]);
+                        } else if (fx.prop === 'lng') {
+                            character0PreAuLard.setLatLng([character0PreAuLard.getLatLng().lat, now]);
+                        } else if (fx.prop === 'opacity') {
+                            character0PreAuLard.setOpacity(now)
+                        }
+                    }
+                });
+                }
+                compteurP = 1;
             }
         });
 
         CabaneDeHagrid.on('mouseover', function() {
             if (compteur == 0){
-                //var movingMarker = L.Marker.movingMarker([CabaneDeHagrid.getLatLng()], []).addTo(mymap);
-                //movingMarker.moveTo(PreAuLard.getLatLng(), 10000); // 10000 est la durée de l'animation en millisecondes
                 if (character2CabaneDeHagrid != undefined){
-                    //var movingMarker = L.Marker.movingMarker([CabaneDeHagrid.getLatLng()], []).addTo(mymap);
                     var latlngs = {
-                        start_: CabaneDeHagrid.getLatLng(),
-                        end_: [40.729, -74.1516]
+                        start_: {lat: 40.735, lng: -74.145},
+                        end_: {lat: 40.729, lng: -74.1516}
                     };
+                    var startOpacity = 0;
+                    var endOpacity = 1;
                     character0CabaneDeHagrid.addTo(mymap);
-                    $({lat: latlngs.start_.lat, lng: latlngs.start_.lng}).animate({lat: latlngs.end_[0], lng: latlngs.end_[1]}, {
+                    character0CabaneDeHagrid.setLatLng([40.735, -74.145]);
+                    $({lat: latlngs.start_.lat, lng: latlngs.start_.lng, opacity: startOpacity}).animate({lat: latlngs.end_.lat, lng: latlngs.end_.lng, opacity: endOpacity}, {
                         duration: 300, // Durée de l'animation en millisecondes
                         step: function(now, fx) {
                             if (fx.prop === 'lat') {
                                 character0CabaneDeHagrid.setLatLng([now, character0CabaneDeHagrid.getLatLng().lng]);
                             } else if (fx.prop === 'lng') {
                                 character0CabaneDeHagrid.setLatLng([character0CabaneDeHagrid.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character0CabaneDeHagrid.setOpacity(now)
                             }
                         }
                     });
 
                     var latlngs1 = {
-                        start_: CabaneDeHagrid.getLatLng(),
-                        end_: [40.727, -74.14335]
+                        start_1: {lat: 40.735, lng: -74.145},
+                        end_1: {lat: 40.727, lng: -74.14335}
                     };
                     character1CabaneDeHagrid.addTo(mymap);
-                    $({lat: latlngs1.start_.lat, lng: latlngs1.start_.lng}).animate({lat: latlngs1.end_[0], lng: latlngs1.end_[1]}, {
+                    character1CabaneDeHagrid.setLatLng([40.735, -74.145]);
+                    $({lat: latlngs1.start_1.lat, lng: latlngs1.start_1.lng, opacity: startOpacity}).animate({lat: latlngs1.end_1.lat, lng: latlngs1.end_1.lng, opacity: endOpacity}, {
                         duration: 300, // Durée de l'animation en millisecondes
                         step: function(now, fx) {
                             if (fx.prop === 'lat') {
                                 character1CabaneDeHagrid.setLatLng([now, character1CabaneDeHagrid.getLatLng().lng]);
                             } else if (fx.prop === 'lng') {
                                 character1CabaneDeHagrid.setLatLng([character1CabaneDeHagrid.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character1CabaneDeHagrid.setOpacity(now)
                             }
                         }
                     });
 
                     var latlngs2 = {
-                        start_: CabaneDeHagrid.getLatLng(),
-                        end_: [40.729, -74.1352]
+                        start_2: {lat: 40.735, lng: -74.145},
+                        end_2: {lat: 40.729, lng: -74.1352}
                     };
                     character2CabaneDeHagrid.addTo(mymap);
-                    $({lat: latlngs2.start_.lat, lng: latlngs2.start_.lng}).animate({lat: latlngs2.end_[0], lng: latlngs2.end_[1]}, {
+                    character2CabaneDeHagrid.setLatLng([40.735, -74.145]);
+                    $({lat: latlngs2.start_2.lat, lng: latlngs2.start_2.lng, opacity: startOpacity}).animate({lat: latlngs2.end_2.lat, lng: latlngs2.end_2.lng, opacity: endOpacity}, {
                         duration: 300, // Durée de l'animation en millisecondes
                         step: function(now, fx) {
                             if (fx.prop === 'lat') {
                                 character2CabaneDeHagrid.setLatLng([now, character2CabaneDeHagrid.getLatLng().lng]);
                             } else if (fx.prop === 'lng') {
                                 character2CabaneDeHagrid.setLatLng([character2CabaneDeHagrid.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character2CabaneDeHagrid.setOpacity(now)
                             }
                         }
                     });
-                    console.log("test");
-
-
-                    //movingMarker.moveTo(character0CabaneDeHagrid.getLatLng(), 1000);
-                    //character0CabaneDeHagrid.addTo(mymap);
-                    //character1CabaneDeHagrid.addTo(mymap);
-                    //character2CabaneDeHagrid.addTo(mymap);
                 }
                 else if (character1CabaneDeHagrid != undefined){
+                    var latlngs = {
+                        start_: {lat: 40.735, lng: -74.145},
+                        end_: {lat: 40.729, lng: -74.1516}
+                    };
+                    var startOpacity = 0;
+                    var endOpacity = 1;
                     character0CabaneDeHagrid.addTo(mymap);
+                    character0CabaneDeHagrid.setLatLng([40.735, -74.145]);
+                    $({lat: latlngs.start_.lat, lng: latlngs.start_.lng, opacity: startOpacity}).animate({lat: latlngs.end_.lat, lng: latlngs.end_.lng, opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character0CabaneDeHagrid.setLatLng([now, character0CabaneDeHagrid.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character0CabaneDeHagrid.setLatLng([character0CabaneDeHagrid.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character0CabaneDeHagrid.setOpacity(now)
+                            }
+                        }
+                    });
+
+                    var latlngs1 = {
+                        start_1: {lat: 40.735, lng: -74.145},
+                        end_1: {lat: 40.727, lng: -74.14335}
+                    };
                     character1CabaneDeHagrid.addTo(mymap);
+                    character1CabaneDeHagrid.setLatLng([40.735, -74.145]);
+                    $({lat: latlngs1.start_1.lat, lng: latlngs1.start_1.lng, opacity: startOpacity}).animate({lat: latlngs1.end_1.lat, lng: latlngs1.end_1.lng, opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character1CabaneDeHagrid.setLatLng([now, character1CabaneDeHagrid.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character1CabaneDeHagrid.setLatLng([character1CabaneDeHagrid.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character1CabaneDeHagrid.setOpacity(now)
+                            }
+                        }
+                    });
                 }
                 else if (character0CabaneDeHagrid != undefined){
+                    var latlngs = {
+                        start_: {lat: 40.735, lng: -74.145},
+                        end_: {lat: 40.729, lng: -74.1516}
+                    };
+                    var startOpacity = 0;
+                    var endOpacity = 1;
                     character0CabaneDeHagrid.addTo(mymap);
+                    character0CabaneDeHagrid.setLatLng([40.735, -74.145]);
+                    $({lat: latlngs.start_.lat, lng: latlngs.start_.lng, opacity: startOpacity}).animate({lat: latlngs.end_.lat, lng: latlngs.end_.lng, opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                character0CabaneDeHagrid.setLatLng([now, character0CabaneDeHagrid.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                character0CabaneDeHagrid.setLatLng([character0CabaneDeHagrid.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                character0CabaneDeHagrid.setOpacity(now)
+                            }
+                        }
+                    });
                 }
                 if (HagridMarker != undefined){
+                    var latlngs = {
+                        start_: {lat: 40.801100, lng: -74.22030},
+                        end_: {lat: 40.735, lng: -74.145}
+                    };
+                    var startOpacity = 0;
+                    var endOpacity = 1;
                     HagridMarker.addTo(mymap);
+                    HagridMarker.setLatLng([40.801100, -74.22030]);
+                    $({lat: latlngs.start_.lat, lng: latlngs.start_.lng, opacity: startOpacity}).animate({lat: latlngs.end_.lat, lng: latlngs.end_.lng, opacity: endOpacity}, {
+                        duration: 300, // Durée de l'animation en millisecondes
+                        step: function(now, fx) {
+                            if (fx.prop === 'lat') {
+                                HagridMarker.setLatLng([now, HagridMarker.getLatLng().lng]);
+                            } else if (fx.prop === 'lng') {
+                                HagridMarker.setLatLng([HagridMarker.getLatLng().lat, now]);
+                            } else if (fx.prop === 'opacity') {
+                                HagridMarker.setOpacity(now)
+                            }
+                        }
+                    });
                 }
                 compteur = 1;
             }
