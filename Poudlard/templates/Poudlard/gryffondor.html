@@ -4,9 +4,22 @@
 {% block maison %}
 <body class="gryffondor_page">
     <div class="page-header_gryffondor">
-        <a href="/">
+        <div class="imageMenu">
+        <a href="/gryffondor">
             <img class="imageBlasonMaison" src="{% static 'media/blason_gryffondor.png' %}" alt='Blason Gryffondor'/>
-        </a> 
+        </a>
+        <div class="dropdownMenu">
+            <div class="serpentard">
+                <a href="/serpentard"><img class="menuImage" src="{% static 'media/blason_serpentard.png' %}" alt="Serpentard"></a>
+            </div>
+            <div class="serdaigle">
+                <a href="/serdaigle"><img class="menuImage" src="{% static 'media/blason_serdaigle.png' %}" alt="Serdaigle"></a>
+            </div>
+            <div class="poufsouffle">
+                <a href="/poufsouffle"><img class="menuImage" src="{% static 'media/blason_poufsouffle.png' %}" alt="Poufsouffle"></a>
+            </div>
+            </div>
+        </div>
         <h1><a href="/">Poudlard</a></h1>
         <a href="/carte_du_maraudeur">
             <img class="imageCarteDuMaraudeur" src="{% static 'media/logo_carte_du_maraudeur.jpg' %}" alt='Carte du Maraudeur'/>

@@ -158,6 +158,58 @@ h4 {
     margin-right: 40px;
 }
 
+.imageMenu {
+    position: relative;
+    display: inline-block;
+}
+
+.imageMenu img:not(.menuImage) {
+    transition: transform 0.8s ease-in-out;
+}
+
+.imageMenu img.menuImage {
+    transition: transform 0.3s ease-in-out;
+}
+
+.imageMenu img.menuImage:hover {
+    transform: scale(1.1);
+}
+
+.imageMenu img:not(.menuImage):hover {
+    transform: scale(1.1);
+}
+
+.imageMenu:hover img:not(.menuImage){
+    transform: rotate(360deg);
+}
+
+.dropdownMenu {
+    display: none;
+    position: absolute;
+    left: 40px;
+    background-color: #740001;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: center;
+}
+
+.dropdownMenu .serpentard {
+    background-color: #206137;
+}
+
+.dropdownMenu .serdaigle {
+    background-color: #14308b;
+}
+
+.dropdownMenu .poufsouffle {
+    background-color: #e4a915;
+}
+
+.imageMenu:hover .dropdownMenu {
+    display: block;
+}
+
 .gryffondor_page {
     background-image: url('../media/salle_commune_gryffondor.jpg');
     background-color: #740001;
