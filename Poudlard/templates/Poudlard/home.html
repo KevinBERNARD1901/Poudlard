@@ -2,9 +2,15 @@
 {% load static%}
 
 {% block maison %}
-<body>
-    <div class="page-header">
+<body class="home_page">
+    <div class="page-header_home">
+        <a href="/">
+            <img class="imageBlasonMaison" src="{% static 'media/image_vide.png' %}" alt='Image Vide'/>
+        </a>
         <h1><a href="/">Poudlard</a></h1>
+        <a href="/carte_du_maraudeur">
+            <img class="imageCarteDuMaraudeur" src="{% static 'media/logo_carte_du_maraudeur.jpg' %}" alt='Carte du Maraudeur'/>
+        </a>
     </div>
     <div class="content container">
  
